@@ -14,21 +14,17 @@ The infrastructure was deployed in the AWS Hong Kong Region (ap-east-1). The EC2
 - Amazon Linux 2023
 - Nginx
 - AWS CLI
-- Infrastructure Architecture
 
-## The infrastructure consists of:
-| Component | Configuration |
-| :--- | :--- |
-| **VPC** | 10.0.0.0/14 |
-| **Public Subnet** | 10.0.1.0/24 |
-| **Internet Gateway** | Attached to the VPC |
+## Infrastructure Architecture
+The infrastructure consists of:
+1. VPC: 10.0.0.0/16
+2. Public Subnet: 10.0.1.0/24 
+3. Internet Gateway Attached to the VPC
+4. A route table with a default route to the internet gateway.
+5. A security group allowing inbound HTTP (port 80) and outbound HTTPS (port 443).
+6. An Amazon Linux 2023 EC2 instance with a public IPv4 address.
+7. An IAM instance profile enabling AWS Systems Manager Session Manager access.
 
- 
-An internet gateway attached to the VPC.
-A route table with a default route to the internet gateway.
-A security group allowing inbound HTTP (port 80) and outbound HTTPS (port 443).
-An Amazon Linux 2023 EC2 instance with a public IPv4 address.
-An IAM instance profile enabling AWS Systems Manager Session Manager access.
 The VPC, subnet, internet gateway, routing, security group and EC2 instance were provisioned using Terraform. The IAM role, instance profile and deployment permissions were configured separately in the AWS Console.
 
 ## Deployment and Testing
