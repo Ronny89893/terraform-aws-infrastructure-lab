@@ -44,10 +44,10 @@ The VPC, subnet, internet gateway, routing, security group and EC2 instance were
 10. Destroyed the EC2 instance using Terraform after testing.
 
 ## Screenshots
-Terraform Deployment
-EC2 Instance
-Nginx Homepage
-Instance terminated
+![Terraform Deployment](Screenshots/terraform-deployment.png)
+![EC2 Instance](Screenshots/ec2-instance.png)
+![Nginx Homepage](Screenshots/nginx-homepage.png)
+![Instance terminated](Screenshots/Terminate_instance.png)
 
 ## Security Considerations
 - Used a dedicated IAM user for Terraform deployment.
